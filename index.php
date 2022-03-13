@@ -1,7 +1,13 @@
 <?php
-
 // Не пробовал запускать, но должно работать!
 file_put_contents('counter.txt', file_get_contents('counter.txt') + 1);
+
+$value = file_get_contents('test.txt');
+
+if (isset($_POST['value'])) {
+    $value = $_POST['value'];
+    file_put_contents('test.txt', $value);
+}
 
 ?>
 
@@ -17,6 +23,17 @@ file_put_contents('counter.txt', file_get_contents('counter.txt') + 1);
 <body>
 
 <p>Это просто сайт, на котором мы тестили работу с Git!</p>
+<p><?= $value ?></p>
+
+<form action="#" method="post" id="test">
+    <label>
+        <textarea name="value" cols="30" rows="10"> <?= $value ?></textarea>
+    </label>
+
+    <input type="submit" value="Записать" form="test">
+</form>
+
+
 
 </body>
 </html>
