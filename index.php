@@ -1,3 +1,10 @@
+<?php
+
+// Не пробовал запускать, но должно работать!
+file_put_contents('counter.txt', file_get_contents('counter.txt') + 1);
+
+?>
+
 <!doctype html>
 <html lang="ru">
 <head>
